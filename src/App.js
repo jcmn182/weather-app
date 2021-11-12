@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import Background from './assets/pexels-brian-de-karma-1677345.jpg'
 import './App.css';
+import {useFetchLocation} from './hooks/useFetchLocation'
 
 function App() {
+  const {data} = useFetchLocation()
+  console.log(data)
+  
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative ">
+      <img src={Background} className="w-full h-screen z-0" alt="landscape" />
+      <p className="absolute top-px">hola</p>
     </div>
   );
 }
