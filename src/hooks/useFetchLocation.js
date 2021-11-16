@@ -6,7 +6,12 @@ export const useFetchLocation = () => {
     const [data, setData] = useState([])
     const key = '1754d5382375a2dd80f483b00a12456a';
    
-    const getLocation = () => {
+    const {lat,lng} = coordinates
+  
+      
+    useEffect(() => {
+
+      const getLocation = () => {
         if (!navigator.geolocation) {
           console.log('Geolocation is not supported by your browser');
         } 
@@ -20,20 +25,20 @@ export const useFetchLocation = () => {
         }
       }
 
-    const {lat,lng} = coordinates
-    const fetchData = async () => {
+      getLocation()
+
+      
+      }, [])
+
+    useEffect(() => {
+
+      const fetchData = async () => {
         const API = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&exclude=alerts,hourly,minutely&appid=${key}&units=metric`
         const response = await fetch(API);
         const result = await response.json();
         setData(result)
       }
-      
-    useEffect(() => {
-      getLocation()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [])
 
-    useEffect(() => {
       if(lat!==''&&lng!==''){
       fetchData()}
       // eslint-disable-next-line react-hooks/exhaustive-deps
