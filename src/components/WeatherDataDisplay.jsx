@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export const WeatherDataDisplay = ({data}) => { 
     const {current} = data
-    
+
     return (
         <>
         <div className="absolute top-20px left-10 w-3/12 bg-black bg-opacity-50  border-card rounded-lg">

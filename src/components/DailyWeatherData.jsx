@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 export const DailyWeatherData = ({data}) => {
     const {daily} = data
@@ -9,8 +10,12 @@ export const DailyWeatherData = ({data}) => {
                 daily?
                 (daily.map((day,index)=>{
                     return (
-                    <div className="p-3 text-white font-roboto border-card rounded-lg m-2 p-4" key={day.dt}>
-                        <img  className="m-0" src={`http://openweathermap.org/img/wn/${daily[index].weather[0].icon}@2x.png`} alt=""/>
+                    <div className="p-3 text-white font-roboto border-card rounded-lg m-2 p-4 relative" key={day.dt}>
+                        <div>
+                        <div className="absolute top-6 left-0 w-full"><p className=" w-full text-center">{moment().add(index, 'days').format('dddd')}</p></div>
+                        <img  className="m-2.5" src={`http://openweathermap.org/img/wn/${daily[index].weather[0].icon}@2x.png`} alt=""/>
+                        <div className="absolute top-28 left-0 w-full"><p className=" w-full text-center">{daily[index].weather[0].description}</p></div>
+                        </div>
                         <div className="flex justify-between pb-2">
                             <div>Morning</div>
                             <div className="pl-2">{daily[index].temp.morn} °C</div>
