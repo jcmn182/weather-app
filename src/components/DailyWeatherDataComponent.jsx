@@ -1,7 +1,6 @@
-import React from 'react'
 import moment from 'moment'
 
-export const DailyWeatherData = ({data}) => {
+export const DailyWeatherDataComponent = ({data}) => {
     const {daily} = data
     console.log(daily)
     return (

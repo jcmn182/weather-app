@@ -1,7 +1,8 @@
 // Components
-import {DailyWeatherData} from './components/DailyWeatherData.jsx'
+import {DailyWeatherDataComponent} from './components/DailyWeatherDataComponent.jsx'
+import {SearchComponent} from './components/SearchComponent.jsx'
 import {DateComponent} from './components/DateComponent.jsx'
-import {WeatherDataDisplay} from './components/WeatherDataDisplay.jsx'
+import {WeatherDataDisplayComponent} from './components/WeatherDataDisplayComponent.jsx'
 // Background img
 import Background from './assets/pexels-brian-de-karma-1677345.jpg'
 import './App.css';
@@ -14,9 +15,10 @@ function App() {
   return (
     <div className="relative">
       <img src={Background} className="w-full h-screen z-0" alt="landscape"/>
+      <SearchComponent/>
       <DateComponent data={data}/>
-      <WeatherDataDisplay data={data}/>
-      <DailyWeatherData data={data}/>
+      <WeatherDataDisplayComponent data={data}/>
+      <DailyWeatherDataComponent data={data}/>
     </div>
   );
 }
