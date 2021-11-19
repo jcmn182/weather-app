@@ -17,8 +17,8 @@ function App() {
       <img src={Background} className="w-full h-screen z-0 object-cover" alt="landscape"/>
       <SearchComponent/>
       <DateComponent data={data}/>
-        <WeatherDataDisplayComponent data={data}/>
-        <DailyWeatherDataComponent data={data}/>
+      <WeatherDataDisplayComponent data={data}/>
+      <DailyWeatherDataComponent data={data}/>
     </div>
   );
 }
