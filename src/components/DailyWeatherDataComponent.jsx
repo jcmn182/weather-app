@@ -1,10 +1,11 @@
-import moment from 'moment'
+import React from 'react';
+import moment from 'moment';
 
 export const DailyWeatherDataComponent = ({data}) => {
     const {daily} = data
     console.log(daily)
     return (
-        <div className="items-center absolute bottom-0 z-10 bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
+        <div className="items-center absolute bottom-0 bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
             {
                 daily?
                 (daily.map((day,index)=>{

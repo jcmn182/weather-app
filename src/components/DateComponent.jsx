@@ -5,7 +5,7 @@ export const DateComponent = ({data}) => {
     const {timezone} = data
     return (
         <>
-        <div className="absolute z-10  top-24 left-4 w-10/12 text-white font-roboto md:top-12 sm:w-6/12 sm:left-10">
+        <div className="absolute top-12 left-4 w-10/12 text-white font-roboto md:top-12 sm:w-6/12 sm:left-10">
             <div className="text-5xl pb-4">{newTime}</div>
             <div className="text-3xl">{newDate}</div>
             <div className="text-2xl">{timezone}</div>

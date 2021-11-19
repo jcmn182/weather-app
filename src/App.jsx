@@ -1,6 +1,5 @@
 // Components
 import {DailyWeatherDataComponent} from './components/DailyWeatherDataComponent.jsx'
-import {SearchComponent} from './components/SearchComponent.jsx'
 import {DateComponent} from './components/DateComponent.jsx'
 import {WeatherDataDisplayComponent} from './components/WeatherDataDisplayComponent.jsx'
 // Background img
@@ -11,14 +10,18 @@ import {useFetchLocation} from './hooks/useFetchLocation'
 
 function App() {
   const {data} = useFetchLocation()
-  
+  console.log(data)
   return (
     <div>
       <img src={Background} className="w-full h-screen z-0 object-cover" alt="landscape"/>
-      <SearchComponent/>
+     { data &&
+      
+      <>
       <DateComponent data={data}/>
       <WeatherDataDisplayComponent data={data}/>
       <DailyWeatherDataComponent data={data}/>
+      </>
+        }
     </div>
   );
 }
