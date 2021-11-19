@@ -3,7 +3,6 @@ import moment from 'moment';
 
 export const DailyWeatherDataComponent = ({data}) => {
     const {daily} = data
-    console.log(daily)
     return (
         <div className="items-center absolute bottom-0 bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
             {
