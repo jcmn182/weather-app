@@ -4,7 +4,7 @@ export const DailyWeatherDataComponent = ({data}) => {
     const {daily} = data
     console.log(daily)
     return (
-        <div className="items-center bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
+        <div className="items-center z-10 bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
             {
                 daily?
                 (daily.map((day,index)=>{

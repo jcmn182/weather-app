@@ -4,10 +4,14 @@ export const useFetchLocation = () => {
 
     const [coordinates, setCoordinates] = useState({lat:'',lng:''})
     const [data, setData] = useState([])
+    const [newLocation, setnewLocation] = useState('')
     const key = '1754d5382375a2dd80f483b00a12456a';
-   
+
     const {lat,lng} = coordinates
   
+    const dataUpdate = (param) =>{
+      setnewLocation(param)
+    }
       
     useEffect(() => {
 
@@ -44,5 +48,18 @@ export const useFetchLocation = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [coordinates])  
 
-    return {data}
+  /*  useEffect(() => {
+
+      const fetchData = async () => {
+        const API = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lng}&exclude=alerts,hourly,minutely&appid=${key}&units=metric`
+        const response = await fetch(API);
+        const result = await response.json();
+        setData(result)
+      }
+      
+      fetchData()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [newLocation]) */ 
+
+    return {data,dataUpdate}
 }
