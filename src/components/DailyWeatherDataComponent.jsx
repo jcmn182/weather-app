@@ -4,12 +4,12 @@ import moment from 'moment';
 export const DailyWeatherDataComponent = ({data}) => {
     const {daily} = data
     return (
-        <div className="items-center absolute bottom-0 bg-black bg-opacity-50 flex justify-between overflowTest w-full bottom-0 absolute">
+        <div className="items-center absolute bottom-0 bg-black bg-opacity-50 flex justify-between overflowTest w-full">
             {
                 daily?
                 (daily.map((day,index)=>{
                     return (
-                    <div className="p-3 text-white font-roboto border-card rounded-lg m-2 p-4 relative" key={day.dt}>
+                    <div className="text-white font-roboto border-card rounded-lg m-2 p-4 relative" key={day.dt}>
                         <div>
                         <div className="absolute top-6 left-0 w-full"><p className=" w-full text-center">{moment().add(index, 'days').format('dddd')}</p></div>
                         <img  className="m-2.5" src={`http://openweathermap.org/img/wn/${daily[index].weather[0].icon}@2x.png`} alt=""/>

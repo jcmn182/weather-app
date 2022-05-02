@@ -17,10 +17,11 @@ function App() {
      { loading?
       
       (<>
-      <DateComponent data={data}/>
-      <WeatherDataDisplayComponent data={data}/>
-      <DailyWeatherDataComponent data={data}/>
-      </>):<LoaderComponent/>
+        <DateComponent data={data}/>
+        <WeatherDataDisplayComponent data={data}/>
+        <DailyWeatherDataComponent data={data}/>
+      </>
+      ):<LoaderComponent/>
         }
     </div>
   );

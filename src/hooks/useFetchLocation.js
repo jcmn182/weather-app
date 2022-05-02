@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react';
 
 export const useFetchLocation = () => {
+  
 
     const [coordinates, setCoordinates] = useState({lat:'',lng:''})
     const [data, setData] = useState([])
